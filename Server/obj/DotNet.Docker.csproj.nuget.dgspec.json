@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Работа\\Тестовое задание\\Server\\DotNet.Docker.csproj": {}
+    "C:\\Работа\\Тестовое задание\\test\\Server\\DotNet.Docker.csproj": {}
   },
   "projects": {
-    "C:\\Работа\\Тестовое задание\\Server\\DotNet.Docker.csproj": {
+    "C:\\Работа\\Тестовое задание\\test\\Server\\DotNet.Docker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Работа\\Тестовое задание\\Server\\DotNet.Docker.csproj",
+        "projectUniqueName": "C:\\Работа\\Тестовое задание\\test\\Server\\DotNet.Docker.csproj",
         "projectName": "DotNet.Docker",
-        "projectPath": "C:\\Работа\\Тестовое задание\\Server\\DotNet.Docker.csproj",
+        "projectPath": "C:\\Работа\\Тестовое задание\\test\\Server\\DotNet.Docker.csproj",
         "packagesPath": "C:\\Users\\aov-p\\.nuget\\packages\\",
-        "outputPath": "C:\\Работа\\Тестовое задание\\Server\\obj\\",
+        "outputPath": "C:\\Работа\\Тестовое задание\\test\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\aov-p\\AppData\\Roaming\\NuGet\\NuGet.Config",

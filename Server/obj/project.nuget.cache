@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "P42quCHkE2M=",
+  "dgSpecHash": "Z38ps4KOrSw=",
   "success": true,
-  "projectFilePath": "C:\\Работа\\Тестовое задание\\Server\\DotNet.Docker.csproj",
+  "projectFilePath": "C:\\Работа\\Тестовое задание\\test\\Server\\DotNet.Docker.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
