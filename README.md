@@ -1,7 +1,7 @@
 # test
 ## Запуск проекта
 ### Запуск сервера
-Для работы сервера необходимо установить Docker по ссылке https://www.docker.com/products/docker-desktop/. После установки необходимо открыть терминал в любой папке и выполнить команду `docker run -p 8888:8888 orlovanton01/server-image:latest`  
+Для работы сервера необходимо установить Docker по ссылке <https://www.docker.com/products/docker-desktop/>. После установки необходимо открыть терминал в любой папке и выполнить команду `docker run -p 8888:8888 orlovanton01/server-image:latest`  
 При успешном запуске контейнера появится сообщение `Сервер запущен и ожидает подключения...`
 ## Запуск клиента и тестов
 Для работы клиента и тестов необходимо установить .NET с сайта https://dotnet.microsoft.com/ru-ru/download. После установки необходимо перейти в ветвь `client-and-tests` (ссылка https://github.com/orlovanton01/test/tree/client-and-tests), нажать `Code->Download ZIP`. После загрузки необходимо распаковать архив и перейти в папку клиента или тестов
