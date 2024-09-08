@@ -22,7 +22,7 @@ jobs:
         dotnet-version: '8.0.x'  # Используем .NET SDK 8.0
 
     - name: Build the project
-      run: dotnet build Server.generated.sln --configuration Release
+      run: dotnet build Server/Server.generated.sln --configuration Release
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
