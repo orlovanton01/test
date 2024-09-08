@@ -8,6 +8,7 @@ class Server
 {
     private TcpListener listener;
 
+    // Конструктор для прослушивания входящего соединения
     public Server()
     {
         listener = new TcpListener(IPAddress.Any, 8888);
@@ -15,28 +16,30 @@ class Server
         Console.WriteLine("Сервер запущен и ожидает подключения...");
     }
 
+    // Функция для старта подключения клиента
     public void Start()
     {
         while (true)
         {
             TcpClient client = listener.AcceptTcpClient();
             Console.WriteLine("Клиент подключен");
-            Thread clientThread = new Thread(() => HandleClient(client));
+            Thread clientThread = new Thread(() => HandleClient(client)); // поток для прослушивания клиентом
             clientThread.Start();
         }
     }
 
+    // Функция обращения сервера к клиенту
     private void HandleClient(TcpClient client)
     {
-        NetworkStream stream = client.GetStream();
+        NetworkStream stream = client.GetStream(); // получение потока
         while (true)
         {
             try
             {
                 DateTime thisDay = DateTime.Now;
                 string stringDay = thisDay.ToString();
-                int even = 0; // чётные
-                int odd = 0; // нечетные
+                int even = 0; // счётчик чётных чисел
+                int odd = 0; // счётчик нечётных чисел
                 string message;
                 foreach (var item in stringDay)
                     try
@@ -55,8 +58,8 @@ class Server
                     message = "нечет!";
                 else
                     message = "равно!";
-                byte[] data = Encoding.UTF8.GetBytes(message);
-                stream.Write(data, 0, data.Length);
+                byte[] data = Encoding.UTF8.GetBytes(message); // преобразуем данные в байтовую строку
+                stream.Write(data, 0, data.Length); // отправляем
                 Console.WriteLine("Отправлено: " + message);
                 Thread.Sleep(1000);  // пауза перед следующей отправкой
             }

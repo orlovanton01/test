@@ -7,33 +7,36 @@ class Client
     private TcpClient client;
     private NetworkStream stream;
 
+    // Конструктор
     public Client()
     {
         client = new TcpClient("127.0.0.1", 8888);
         stream = client.GetStream();
     }
 
+    // Функция открытия и старта нового потока
     public void Start()
     {
         Thread receivingThread = new Thread(ReceiveData);
         receivingThread.Start();
     }
 
+    // Функция для отправки данных
     private void ReceiveData()
     {
-        byte[] buffer = new byte[256];
+        byte[] buffer = new byte[256]; // буфер для обмена
         while (true)
         {
             try
             {
-                int bytesRead = stream.Read(buffer, 0, buffer.Length);
+                int bytesRead = stream.Read(buffer, 0, buffer.Length); // считываем даннные
                 if (bytesRead == 0)
                 {
                     Console.WriteLine("Соединение с сервером потеряно");
                     break;
                 }
 
-                string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
+                string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);//получаем сообщение
                 Console.WriteLine(message);
             }
             catch (Exception e)

@@ -9,6 +9,7 @@ public class ServerClientIntegrationTests
     private readonly int _port = 8888;
     private readonly string _serverHost = "localhost";
 
+    // Тестирование того, что клиент получает корректные сообщения
     [Fact]
     public async Task Client_Should_Receive_Data_From_Server()
     {
@@ -25,6 +26,7 @@ public class ServerClientIntegrationTests
         receivedMessage.Should().BeOneOf("чет!", "нечет!", "равно!");
     }
 
+    // Тестирование подключения нескольких клиентов к серверу
     [Fact]
     public async Task Server_Should_Handle_Multiple_Clients()
     {

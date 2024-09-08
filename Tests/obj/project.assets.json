@@ -1099,11 +1099,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Работа\\Тестовое задание\\Tests\\Tests.csproj",
+      "projectUniqueName": "C:\\Работа\\Тестовое задание\\test\\Tests\\Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "C:\\Работа\\Тестовое задание\\Tests\\Tests.csproj",
+      "projectPath": "C:\\Работа\\Тестовое задание\\test\\Tests\\Tests.csproj",
       "packagesPath": "C:\\Users\\aov-p\\.nuget\\packages\\",
-      "outputPath": "C:\\Работа\\Тестовое задание\\Tests\\obj\\",
+      "outputPath": "C:\\Работа\\Тестовое задание\\test\\Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\aov-p\\AppData\\Roaming\\NuGet\\NuGet.Config",

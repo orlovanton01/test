@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Работа\\Тестовое задание\\Client\\Client.csproj",
+      "projectUniqueName": "C:\\Работа\\Тестовое задание\\test\\Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "C:\\Работа\\Тестовое задание\\Client\\Client.csproj",
+      "projectPath": "C:\\Работа\\Тестовое задание\\test\\Client\\Client.csproj",
       "packagesPath": "C:\\Users\\aov-p\\.nuget\\packages\\",
-      "outputPath": "C:\\Работа\\Тестовое задание\\Client\\obj\\",
+      "outputPath": "C:\\Работа\\Тестовое задание\\test\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\aov-p\\AppData\\Roaming\\NuGet\\NuGet.Config",

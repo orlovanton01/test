@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Pq02nxCxNr0=",
+  "dgSpecHash": "DnNkDVuB9E4=",
   "success": true,
-  "projectFilePath": "C:\\Работа\\Тестовое задание\\Tests\\Tests.csproj",
+  "projectFilePath": "C:\\Работа\\Тестовое задание\\test\\Tests\\Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aov-p\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\aov-p\\.nuget\\packages\\fluentassertions\\6.12.0\\fluentassertions.6.12.0.nupkg.sha512",
