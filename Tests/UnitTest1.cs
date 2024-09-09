@@ -9,28 +9,28 @@ public class ServerClientIntegrationTests
     private readonly int _port = 8888;
     private readonly string _serverHost = "localhost";
 
-    // Тестирование того, что клиент получает корректные сообщения
+    // РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С‚РѕРіРѕ, С‡С‚Рѕ РєР»РёРµРЅС‚ РїРѕР»СѓС‡Р°РµС‚ РєРѕСЂСЂРµРєС‚РЅС‹Рµ СЃРѕРѕР±С‰РµРЅРёСЏ
     [Fact]
     public async Task Client_Should_Receive_Data_From_Server()
     {
-        // Клиент подключается к серверу в контейнере (на хосте)
+        // РљР»РёРµРЅС‚ РїРѕРґРєР»СЋС‡Р°РµС‚СЃСЏ Рє СЃРµСЂРІРµСЂСѓ РІ РєРѕРЅС‚РµР№РЅРµСЂРµ (РЅР° С…РѕСЃС‚Рµ)
         using var client = new TcpClient(_serverHost, _port);
         using var stream = client.GetStream();
         byte[] buffer = new byte[256];
 
-        // Считываем данные от сервера
+        // РЎС‡РёС‚С‹РІР°РµРј РґР°РЅРЅС‹Рµ РѕС‚ СЃРµСЂРІРµСЂР°
         int bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
         string receivedMessage = Encoding.UTF8.GetString(buffer, 0, bytesRead);
 
-        // Проверяем, что сообщение от сервера содержит корректные значения
-        receivedMessage.Should().BeOneOf("чет!", "нечет!", "равно!");
+        // РџСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ СЃРѕРѕР±С‰РµРЅРёРµ РѕС‚ СЃРµСЂРІРµСЂР° СЃРѕРґРµСЂР¶РёС‚ РєРѕСЂСЂРµРєС‚РЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ
+        receivedMessage.Should().BeOneOf("пїЅпїЅпїЅ!", "пїЅпїЅпїЅпїЅпїЅ!", "пїЅпїЅпїЅпїЅпїЅ!");
     }
 
-    // Тестирование подключения нескольких клиентов к серверу
+    // РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РїРѕРґРєР»СЋС‡РµРЅРёСЏ РЅРµСЃРєРѕР»СЊРєРёС… РєР»РёРµРЅС‚РѕРІ Рє СЃРµСЂРІРµСЂСѓ
     [Fact]
     public async Task Server_Should_Handle_Multiple_Clients()
     {
-        // Подключаемся к серверу с двух клиентов
+        // РџРѕРґРєР»СЋС‡Р°РµРјСЃСЏ Рє СЃРµСЂРІРµСЂСѓ СЃ РґРІСѓС… РєР»РёРµРЅС‚РѕРІ
         using var client1 = new TcpClient(_serverHost, _port);
         using var client2 = new TcpClient(_serverHost, _port);
 
@@ -40,15 +40,15 @@ public class ServerClientIntegrationTests
         byte[] buffer1 = new byte[256];
         byte[] buffer2 = new byte[256];
 
-        // Чтение данных от сервера обоими клиентами
+        // Р§С‚РµРЅРёРµ РґР°РЅРЅС‹С… РѕС‚ СЃРµСЂРІРµСЂР° РѕР±РѕРёРјРё РєР»РёРµРЅС‚Р°РјРё
         int bytesRead1 = await stream1.ReadAsync(buffer1, 0, buffer1.Length);
         int bytesRead2 = await stream2.ReadAsync(buffer2, 0, buffer2.Length);
 
         string receivedMessage1 = Encoding.UTF8.GetString(buffer1, 0, bytesRead1);
         string receivedMessage2 = Encoding.UTF8.GetString(buffer2, 0, bytesRead2);
 
-        // Оба клиента должны получить корректные сообщения от сервера
-        receivedMessage1.Should().BeOneOf("чет!", "нечет!", "равно!");
-        receivedMessage2.Should().BeOneOf("чет!", "нечет!", "равно!");
+        // РћР±Р° РєР»РёРµРЅС‚Р° РґРѕР»Р¶РЅС‹ РїРѕР»СѓС‡РёС‚СЊ РєРѕСЂСЂРµРєС‚РЅС‹Рµ СЃРѕРѕР±С‰РµРЅРёСЏ РѕС‚ СЃРµСЂРІРµСЂР°
+        receivedMessage1.Should().BeOneOf("пїЅпїЅпїЅ!", "пїЅпїЅпїЅпїЅпїЅ!", "пїЅпїЅпїЅпїЅпїЅ!");
+        receivedMessage2.Should().BeOneOf("пїЅпїЅпїЅ!", "пїЅпїЅпїЅпїЅпїЅ!", "пїЅпїЅпїЅпїЅпїЅ!");
     }
 }
