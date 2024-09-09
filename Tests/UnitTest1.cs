@@ -23,7 +23,7 @@ public class ServerClientIntegrationTests
         string receivedMessage = Encoding.UTF8.GetString(buffer, 0, bytesRead);
 
         // Проверяем, что сообщение от сервера содержит корректные значения
-        receivedMessage.Should().BeOneOf("���!", "�����!", "�����!");
+        receivedMessage.Should().BeOneOf("чет!", "нечет!", "равно!");
     }
 
     // Тестирование подключения нескольких клиентов к серверу
@@ -48,7 +48,7 @@ public class ServerClientIntegrationTests
         string receivedMessage2 = Encoding.UTF8.GetString(buffer2, 0, bytesRead2);
 
         // Оба клиента должны получить корректные сообщения от сервера
-        receivedMessage1.Should().BeOneOf("���!", "�����!", "�����!");
-        receivedMessage2.Should().BeOneOf("���!", "�����!", "�����!");
+        receivedMessage1.Should().BeOneOf("чет!", "нечет!", "равно!");
+        receivedMessage2.Should().BeOneOf("чет!", "нечет!", "равно!");
     }
 }
